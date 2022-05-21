@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+
+// 1. import `ChakraProvider` component
+import { ChakraProvider } from "@chakra-ui/react";
+import Forecast from "./components/Forecast";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <Forecast />
+    </ChakraProvider>
   );
 }
 
 export default App;
+
+// 5days each day of 3 hours
+
+// enough data to make the ui
+// get the ma and min of each day and grab one time for each
+// if you ask for a diffrent 5 days the UI will still work
