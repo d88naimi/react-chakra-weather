@@ -10,6 +10,7 @@ function Forecast() {
   useEffect(() => {
     const search = async () => {
       const { data } = await axios.get("./data.json");
+      console.log("🚀 ~ file: Forecast.js ~ line 13 ~ search ~ data", data);
       setData(data);
     };
     search();
@@ -61,9 +62,9 @@ function Forecast() {
   return (
     <Container>
       <Grid templateColumns="repeat(5, 1fr)" gap={6}>
-        {fiveDay.map((weather) => {
+        {fiveDay.map((weather, i) => {
           return (
-            <GridItem>
+            <GridItem key={i}>
               {/* switch statement for loading hardcoded icons */}
               {/* {setIcon(weather.weather[0].main)} */}
               <Box maxW="sm" borderWidth="1px" borderRadius="lg">
